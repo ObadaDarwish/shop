@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="checkout">Checkout</button>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    const stripe = Stripe('pk_test_eqBya5iMnc6y29hbY5XasKA6003LutOJaY');
+    const checkoutbtn = document.getElementById('checkout');
+    checkoutbtn.addEventListener('click', () => {
+        stripe
+            .redirectToCheckout({
+                sessionId: 'cs_test_GzezOQfYV9xmC9cIJx9NfWwdIB7JmekplcHfZus8WnqtF18nikWvJa1q'
+            }).then(function (result) {
+            // If `redirectToCheckout` fails due to a browser or network
+            // error, display the localized error message to your customer
+            // using `result.error.message`.
+            console.log(result)
+        }).catch(err => {
+            console.log(err);
+        });
+    });
+
+
+</script>
+</body>
+</html>
