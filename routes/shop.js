@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const shopController = require('../controllers/shop')
+const shopController = require('../controllers/shop');
 
-// router.get('/', shopController.getShop);
 router.get('/cart', shopController.getCart);
 router.post('/cart/add', shopController.addToCart);
 router.delete('/cart/:code', shopController.removeItem);
