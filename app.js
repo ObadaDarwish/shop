@@ -38,13 +38,14 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type', 'Authorization');
     next();
 });
-app.use('/', (req, res, next) => {
-    res.send('Server is up and running!');
-});
+
 app.use('/admin', isAuth, adminRoute);
 app.use('/user', users);
 app.use(auth);
 app.use(isAuth, shop);
+app.use('/', (req, res, next) => {
+    res.send('Server is up and running!');
+});
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.use((req, res, next) => {
