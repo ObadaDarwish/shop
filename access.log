@@ -7,3 +7,8 @@
 ::ffff:127.0.0.1 - - [15/Jun/2020:19:49:04 +0000] "POST /login HTTP/1.1" 200 343 "-" "PostmanRuntime/7.25.0"
 ::ffff:127.0.0.1 - - [15/Jun/2020:19:49:07 +0000] "POST / HTTP/1.1" 200 25 "-" "PostmanRuntime/7.25.0"
 ::ffff:127.0.0.1 - - [15/Jun/2020:19:49:12 +0000] "GET / HTTP/1.1" 200 25 "-" "PostmanRuntime/7.25.0"
+::1 - - [15/Jun/2020:19:56:50 +0000] "GET /images/1590935552510-20150101_001915A.jpg HTTP/1.1" 200 849579 "-" "PostmanRuntime/7.25.0"
+::1 - - [15/Jun/2020:19:57:58 +0000] "POST /admin/products HTTP/1.1" 200 25 "-" "PostmanRuntime/7.25.0"
+::1 - - [15/Jun/2020:20:00:01 +0000] "POST /admin/products HTTP/1.1" 405 27 "-" "PostmanRuntime/7.25.0"
+::1 - - [15/Jun/2020:20:00:11 +0000] "POST / HTTP/1.1" 200 25 "-" "PostmanRuntime/7.25.0"
+::1 - - [15/Jun/2020:20:00:18 +0000] "POST /asdasd HTTP/1.1" 200 25 "-" "PostmanRuntime/7.25.0"

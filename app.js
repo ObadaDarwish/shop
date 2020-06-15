@@ -28,9 +28,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(multer);
 app.use(helmet());
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'})
 
-app.use(morgan('combined',{ stream: accessLogStream }));
+app.use(morgan('combined', {stream: accessLogStream}));
 // CORS headers
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -38,18 +38,15 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type', 'Authorization');
     next();
 });
+
 app.use(auth);
 app.use('/user', users);
-app.use('/', (req, res, next) => {
-    res.send('Server is up and running!');
-});
 app.use('/admin', isAuth, adminRoute);
-app.use(isAuth, shop);
-
+app.use('/shop', isAuth, shop);
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
-app.use((req, res, next) => {
-    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+app.use('/', (req, res, next) => {
+    res.send('Server is up and running!');
 });
 
 app.use((err, req, res, next) => {
